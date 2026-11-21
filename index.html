@@ -7,109 +7,151 @@
 <style>*,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
-<title>Moodboard Space Economy</title>
+<title>Moodboard ORBITA</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: notte orbitale, galleria a tutta larghezza raggruppata per tema; single dark look by choice */
+/* Layout: una fascia per sezione dello script, timecode a sinistra, galleria a destra; colori dal Tema Spazio (bozza 19.11.2026), single dark look */
 :root{
-  --notte:#0b0a1a;
-  --notte-2:#141228;
-  --linea:#2a2648;
-  --testo:#ecebf5;
-  --tenue:#9a96b8;
-  --airglow:#b8e986;
+  --notte-0:#05060F;
+  --notte-2:#0B081B;
+  --superficie:#120F2C;
+  --linea:#2B2851;
+  --testo:#FFFFFF;
+  --tenue:#C9CCEB;
+  --lime:#B9FF69;
+  --blu-evento:#081550;
   --sans:"Inter",system-ui,-apple-system,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
   color-scheme:dark;
 }
-body{background:var(--notte);color:var(--testo);font-family:var(--sans);font-size:16px;line-height:1.5}
-.wrap{max-width:1600px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:48px 80px;display:flex;flex-direction:column;gap:56px}
-header{display:flex;flex-direction:column;gap:12px;max-width:68ch}
+body{background:var(--notte-2);color:var(--testo);font-family:var(--sans);font-size:16px;line-height:1.5}
+.wrap{max-width:1640px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:48px 80px;display:flex;flex-direction:column;gap:64px}
+header{display:flex;flex-direction:column;gap:14px;max-width:72ch}
 .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tenue)}
-h1{font-size:clamp(32px,5vw,56px);font-weight:500;letter-spacing:-.02em;line-height:1.05;margin:0;text-wrap:balance}
-.horizon{height:2px;width:min(420px,100%);background:linear-gradient(90deg,transparent,#5b8cff 30%,var(--airglow) 70%,transparent);border-radius:2px}
+h1{font-size:clamp(34px,5vw,60px);font-weight:500;letter-spacing:-.02em;line-height:1.04;margin:0;text-wrap:balance}
+.horizon{height:2px;width:min(420px,100%);background:linear-gradient(90deg,transparent,#3d6bff 35%,var(--lime) 75%,transparent)}
 header p{color:var(--tenue);margin:0}
 .palette{display:flex;flex-wrap:wrap;gap:8px 20px;font-family:var(--mono);font-size:12px;color:var(--tenue)}
 .palette span{display:inline-flex;align-items:center;gap:8px}
 .palette i{width:14px;height:14px;border-radius:50%;display:inline-block;border:1px solid var(--linea)}
-section{display:flex;flex-direction:column;gap:16px}
-h2{font-size:13px;font-family:var(--mono);font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--tenue);margin:0;padding-bottom:12px;border-bottom:1px solid var(--linea)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,460px),1fr));gap:16px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:var(--tenue)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--lime);display:inline-block}
+.dot.off{background:transparent;border:1px solid var(--tenue)}
+section{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:16px 40px;padding-top:24px;border-top:1px solid var(--linea)}
+@media (max-width:900px){section{grid-template-columns:minmax(0,1fr)}}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.tc{font-family:var(--mono);font-size:13px;color:var(--lime);font-variant-numeric:tabular-nums;letter-spacing:.04em}
+h2{font-size:22px;font-weight:500;margin:0;line-height:1.2;text-wrap:balance}
+.sec-body{display:flex;flex-direction:column;gap:20px;min-width:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:16px}
 figure{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}
-button.shot{all:unset;cursor:zoom-in;display:block;aspect-ratio:16/9;max-width:100%;overflow:hidden;background:var(--notte-2)}
-button.shot:focus-visible{outline:2px solid var(--airglow);outline-offset:3px}
+button.shot{all:unset;cursor:zoom-in;display:block;aspect-ratio:16/9;max-width:100%;overflow:hidden;background:var(--notte-0)}
+button.shot:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
 button.shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
 button.shot:hover img{transform:scale(1.025)}
-figcaption{display:flex;gap:12px;align-items:baseline;font-size:14px}
+figcaption{display:flex;flex-direction:column;gap:2px;font-size:14px}
+figcaption .row{display:flex;gap:10px;align-items:baseline}
 figcaption b{font-family:var(--mono);font-weight:400;font-size:12px;color:var(--tenue);font-variant-numeric:tabular-nums}
 figcaption small{color:var(--tenue);font-size:13px}
-.lb{position:fixed;inset:0;background:rgba(5,4,14,.96);display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));z-index:20;cursor:zoom-out}
+.var{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--notte-0);background:var(--lime);padding:1px 6px;align-self:flex-start}
+.todo{background:var(--superficie);padding:16px 20px;display:flex;flex-direction:column;gap:8px}
+.todo h3{margin:0;font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--tenue);display:flex;align-items:center;gap:8px}
+.todo ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px;font-size:14px}
+.todo li span{color:var(--tenue)}
+.lb{position:fixed;inset:0;background:rgba(5,6,15,.97);display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));z-index:20;cursor:zoom-out}
 .lb img{max-height:100%;max-width:100%;object-fit:contain}
-footer{font-family:var(--mono);font-size:12px;color:var(--tenue)}
+footer{font-family:var(--mono);font-size:12px;color:var(--tenue);display:flex;flex-direction:column;gap:4px}
 @media (prefers-reduced-motion:reduce){button.shot img{transition:none}}
 </style>
 
 <div class="wrap">
   <header>
-    <span class="eyebrow">Video Space Economy · Moodboard v1</span>
-    <h1>Dall'orbita alla Terra</h1>
+    <span class="eyebrow">Stati Generali Space Economy · Video di apertura · ~2'30"</span>
+    <h1>Moodboard ORBITA</h1>
     <div class="horizon" aria-hidden="true"></div>
-    <p>12 immagini di riferimento per il video. Notte profonda viola-indaco, luci delle città color oro, il bordo dell'atmosfera che sfuma dal blu al verde, satelliti avvolti nella lamina dorata. Fai clic su un'immagine per vederla a tutto schermo.</p>
-    <div class="palette" aria-label="Colori dominanti">
-      <span><i style="background:#0b0a1a"></i>notte</span>
-      <span><i style="background:#3a2a8c"></i>indaco</span>
-      <span><i style="background:#e8b04a"></i>luci città</span>
-      <span><i style="background:#5b8cff"></i>atmosfera</span>
-      <span><i style="background:#b8e986"></i>airglow</span>
-      <span><i style="background:#c9a24a"></i>lamina oro</span>
+    <p>Immagini divise per sezione dello script. Fondo quasi nero con una punta di viola, blu notte, una sola luce. Le scene fotografiche sono generate con l'AI. Loghi, dati reali, razzi riconoscibili e grafica vanno reperiti o costruiti a parte e sono elencati in ogni sezione.</p>
+    <div class="palette" aria-label="Colori del Tema Spazio">
+      <span><i style="background:#05060F"></i>notte 0 · #05060F</span>
+      <span><i style="background:#0B081B"></i>notte 2 · #0B081B</span>
+      <span><i style="background:#081550"></i>blu evento · #081550</span>
+      <span><i style="background:#B9FF69"></i>lime · #B9FF69</span>
+    </div>
+    <div class="legend">
+      <span><i class="dot"></i>immagine AI pronta</span>
+      <span><i class="dot off"></i>da reperire o da costruire in motion</span>
     </div>
   </header>
-
-  <section>
-    <h2>Terra e Italia dall'orbita</h2>
-    <div class="grid">
-      <figure><button class="shot" aria-label="Ingrandisci: Italia di notte"><img src="web/01_italia-orbita.webp" alt="L'Italia di notte vista dall'orbita, con le luci delle città e l'orizzonte luminoso"></button><figcaption><b>01</b>Italia di notte <small>orbita bassa, orizzonte curvo</small></figcaption></figure>
-      <figure><button class="shot" aria-label="Ingrandisci: Sardegna e Tirreno"><img src="web/02_sardegna-mediterraneo.webp" alt="Sardegna e Corsica di notte dall'orbita, nuvole sul Tirreno"></button><figcaption><b>02</b>Sardegna e Tirreno <small>inquadratura obliqua</small></figcaption></figure>
-      <figure><button class="shot" aria-label="Ingrandisci: Orizzonte"><img src="web/03_orizzonte-airglow.webp" alt="Orizzonte terrestre con una linea luminosa dal blu al verde e grande spazio vuoto sopra"></button><figcaption><b>03</b>Orizzonte <small>spazio per titoli e numeri</small></figcaption></figure>
-      <figure><button class="shot" aria-label="Ingrandisci: Globo con orbite"><img src="web/04_globo-orbite.webp" alt="Globo terrestre di notte con orbite sottili e satelliti luminosi"></button><figcaption><b>04</b>Globo con orbite <small>Europa e Mediterraneo</small></figcaption></figure>
-    </div>
-  </section>
-
-  <section>
-    <h2>Satelliti e lanci</h2>
-    <div class="grid">
-      <figure><button class="shot" aria-label="Ingrandisci: Satellite in orbita"><img src="web/05_satellite-oro.webp" alt="Satellite con lamina dorata e pannelli solari sopra la Terra di giorno"></button><figcaption><b>05</b>Satellite in orbita <small>dettaglio lamina oro</small></figcaption></figure>
-      <figure><button class="shot" aria-label="Ingrandisci: Alba orbitale"><img src="web/06_satellite-alba.webp" alt="Sagoma di un satellite in controluce sull'alba orbitale"></button><figcaption><b>06</b>Alba orbitale <small>controluce</small></figcaption></figure>
-      <figure><button class="shot" aria-label="Ingrandisci: Scia del lancio"><img src="web/07_lancio-scia.webp" alt="Lunga esposizione di un lancio: arco dorato sul mare di notte"></button><figcaption><b>07</b>Scia del lancio <small>lunga esposizione dal mare</small></figcaption></figure>
-      <figure><button class="shot" aria-label="Ingrandisci: Razzo sulla rampa"><img src="web/08_razzo-rampa.webp" alt="Razzo sulla rampa di notte tra fari e vapore"></button><figcaption><b>08</b>Razzo sulla rampa <small>fari e vapore</small></figcaption></figure>
-    </div>
-  </section>
-
-  <section>
-    <h2>Persone e infrastrutture</h2>
-    <div class="grid">
-      <figure><button class="shot" aria-label="Ingrandisci: Camera bianca"><img src="web/09_camera-bianca.webp" alt="Tecnici in tuta bianca attorno a un satellite dorato in una camera bianca"></button><figcaption><b>09</b>Camera bianca <small>integrazione del satellite</small></figcaption></figure>
-      <figure><button class="shot" aria-label="Ingrandisci: Centro di controllo"><img src="web/10_centro-controllo.webp" alt="Centro di controllo con operatori di spalle e la Terra sul videowall"></button><figcaption><b>10</b>Centro di controllo <small>videowall con l'Europa</small></figcaption></figure>
-      <figure><button class="shot" aria-label="Ingrandisci: Antenne di terra"><img src="web/11_antenne.webp" alt="Grande radiotelescopio di notte tra colline mediterranee con scie di stelle"></button><figcaption><b>11</b>Antenne di terra <small>colline e scie di stelle</small></figcaption></figure>
-    </div>
-  </section>
-
-  <section>
-    <h2>Luna ed esplorazione</h2>
-    <div class="grid">
-      <figure><button class="shot" aria-label="Ingrandisci: Suolo lunare"><img src="web/12_luna.webp" alt="Suolo lunare grigio con la Terra piccola sopra l'orizzonte"></button><figcaption><b>12</b>Suolo lunare <small>Terra sull'orizzonte</small></figcaption></figure>
-    </div>
-  </section>
-
-  <footer>Immagini generate con l'AI (Nano Banana Pro) · originali 5504 × 3072 px</footer>
+  <main id="sezioni" class="wrap" style="padding:0;gap:56px"></main>
+  <footer>
+    <span>Immagini generate con l'AI (Nano Banana Pro) · originali 5504 × 3072 px · progetto Magnific «Moodboard Space Economy»</span>
+    <span>Colori dal Tema Spazio OpenEconomics × Inrete, bozza del 19.11.2026</span>
+  </footer>
 </div>
 
 <div class="lb" id="lb" hidden><img id="lbimg" alt=""></div>
 <script>
+const S=[
+ {tc:"0:00–0:12",t:"Terra di notte, Italia che si illumina",img:[
+  ["30_terra-europa","Terra intera di notte","Europa al centro"],
+  ["01_italia-orbita","Italia di notte","penisola illuminata, orizzonte curvo"],
+  ["02_sardegna-mediterraneo","Sardegna e Tirreno","Mediterraneo scuro"],
+  ["13_alba-punto","Punto luminoso nel nero","alba orbitale, bordo sottile"],
+  ["06_satellite-alba","Satellite all'alba","controluce sul bordo"],
+  ["03_orizzonte-airglow","Orizzonte","spazio per titoli"]],todo:[]},
+ {tc:"0:12–0:30",t:"Usi quotidiani dello spazio",img:[
+  ["14_navigazione","Navigazione","smartphone in auto, di sera"],
+  ["15_meteo","Meteo","perturbazione sull'Europa"],
+  ["16_pagamento","Finanza","pagamento contactless"],
+  ["17_agricoltura","Agricoltura","campi dall'alto, geometrie"],
+  ["18_alluvione","Emergenze","pianura alluvionata"],
+  ["04_globo-orbite","Linee verso il satellite","globo con orbite, prima versione"],
+  ["04_globo-orbite_A","Orbite tecniche A","variante, più linee","var"],
+  ["04_globo-orbite_B","Orbite tecniche B","variante, la più pulita","var"],
+  ["04_globo-orbite_C","Orbite tecniche C","variante, anello con tacche","var"]],
+  todo:[["Alluvione prima e dopo","immagini vere Copernicus EMS (licenza CC BY 4.0)"],["Grafica network minimale","in motion, sopra il globo, con orbite calcolate"]]},
+ {tc:"0:30–0:50",t:"L'industria italiana",img:[
+  ["09_camera-bianca","Camera bianca","ingegneri e satellite"],
+  ["19_ingegneri","Ingegneri al lavoro","cablaggio di un modulo"],
+  ["20_modulo-abitativo","Modulo pressurizzato","in costruzione"],
+  ["08_razzo-rampa","Razzo sulla rampa","generico, di notte"],
+  ["07_lancio-scia","Scia del lancio","lunga esposizione"],
+  ["10_centro-controllo","Centro di controllo","videowall con l'Europa"],
+  ["11_antenne","Antenne di terra","colline e scie di stelle"]],
+  todo:[["Vega e Vega-C su rampa","ESA Multimedia (razzo reale, l'AI lo inventerebbe)"],["Stabilimenti della filiera","archivi stampa Thales Alenia Space, Avio, Leonardo, ASI"],["Mappa dell'Italia con puntini e distretti","in motion, con il motore grafici OE"]]},
+ {tc:"0:50–1:15",t:"€1 che si moltiplica",img:[
+  ["21_goccia","Goccia e cerchi concentrici","metafora dell'effetto moltiplicatore"]],
+  todo:[["Sankey o flussi che si ramificano","in motion, con dati veri"],["Contatori e numeri grandi","in motion, Hedvig e lime"]]},
+ {tc:"1:15–1:35",t:"Sicurezza, clima, autonomia",img:[
+  ["22_satellite-eo","Satellite EO","sopra il Mediterraneo al tramonto"],
+  ["05_satellite-oro","Satellite in orbita","dettaglio lamina oro"],
+  ["23_costellazione","Costellazione","satelliti sopra l'Europa di notte"]],
+  todo:[["Ghiacciai, incendi, siccità","immagini vere Copernicus Sentinel"],["Icone sicurezza e clima","a linea sottile, in motion"]]},
+ {tc:"1:35–1:55",t:"Il mondo e la geopolitica",img:[],
+  todo:[["Globo che ruota con Europa, USA e Cina","in motion, partendo dalla 30 o dalla 04"],["Barre di investimento e linea 2021→2034","in motion, con il motore grafici OE"],["Ariane 6, Falcon 9, Long March","media ufficiali ESA, SpaceX, CNSA"]]},
+ {tc:"1:55–2:15",t:"Ciclo di vita e strumenti pubblici",img:[
+  ["24_laboratorio-ottico","Laboratorio di ricerca","banco ottico"],
+  ["25_camera-termovuoto","Camera termovuoto","test del satellite"],
+  ["26_linea-produttiva","Linea produttiva","satelliti in serie"],
+  ["27_decollo","Decollo","fiamma e vapore"],
+  ["12_luna","Suolo lunare","extra, non nello script"]],
+  todo:[["Loghi UE, ESA, ASI e regionali","vettoriali dai siti istituzionali"]]},
+ {tc:"2:15–2:30",t:"Chiusura",img:[
+  ["28_terra-controluce","Terra in controluce","alone atmosferico"],
+  ["29_fondo-logo","Fondo per i loghi","ORBITA, OpenEconomics × Inrete"]],todo:[]}
+];
+let n=0;const root=document.getElementById('sezioni');
+for(const s of S){
+  const sec=document.createElement('section');
+  const figs=s.img.map(([f,t,d,v])=>`<figure><button class="shot" aria-label="Ingrandisci: ${t}"><img loading="lazy" src="web/${f}.webp" alt="${t}, ${d}"></button><figcaption><span class="row"><b>${f.slice(0,2)}</b>${t}</span><small>${d}</small>${v?'<span class="var">da scegliere</span>':''}</figcaption></figure>`).join('');
+  const todo=s.todo.length?`<div class="todo"><h3><i class="dot off"></i>Da reperire o costruire</h3><ul>${s.todo.map(([a,b])=>`<li>${a} <span>· ${b}</span></li>`).join('')}</ul></div>`:'';
+  sec.innerHTML=`<div class="sec-head"><span class="tc">${s.tc}</span><h2>${s.t}</h2></div><div class="sec-body">${figs?`<div class="grid">${figs}</div>`:''}${todo}</div>`;
+  root.appendChild(sec);
+}
 const lb=document.getElementById('lb'),li=document.getElementById('lbimg');
-document.querySelectorAll('button.shot').forEach(b=>b.addEventListener('click',()=>{const i=b.querySelector('img');li.src=i.src;li.alt=i.alt;lb.hidden=false;}));
+root.addEventListener('click',e=>{const b=e.target.closest('button.shot');if(!b)return;const i=b.querySelector('img');li.src=i.src;li.alt=i.alt;lb.hidden=false;});
 lb.addEventListener('click',()=>{lb.hidden=true});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.hidden=true});
 </script>
