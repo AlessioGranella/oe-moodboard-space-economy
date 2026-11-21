@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Moodboard Space Economy</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: notte orbitale, galleria a tutta larghezza raggruppata per tema; single dark look by choice */
+:root{
+  --notte:#0b0a1a;
+  --notte-2:#141228;
+  --linea:#2a2648;
+  --testo:#ecebf5;
+  --tenue:#9a96b8;
+  --airglow:#b8e986;
+  --sans:"Inter",system-ui,-apple-system,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+body{background:var(--notte);color:var(--testo);font-family:var(--sans);font-size:16px;line-height:1.5}
+.wrap{max-width:1600px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:48px 80px;display:flex;flex-direction:column;gap:56px}
+header{display:flex;flex-direction:column;gap:12px;max-width:68ch}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tenue)}
+h1{font-size:clamp(32px,5vw,56px);font-weight:500;letter-spacing:-.02em;line-height:1.05;margin:0;text-wrap:balance}
+.horizon{height:2px;width:min(420px,100%);background:linear-gradient(90deg,transparent,#5b8cff 30%,var(--airglow) 70%,transparent);border-radius:2px}
+header p{color:var(--tenue);margin:0}
+.palette{display:flex;flex-wrap:wrap;gap:8px 20px;font-family:var(--mono);font-size:12px;color:var(--tenue)}
+.palette span{display:inline-flex;align-items:center;gap:8px}
+.palette i{width:14px;height:14px;border-radius:50%;display:inline-block;border:1px solid var(--linea)}
+section{display:flex;flex-direction:column;gap:16px}
+h2{font-size:13px;font-family:var(--mono);font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--tenue);margin:0;padding-bottom:12px;border-bottom:1px solid var(--linea)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,460px),1fr));gap:16px}
+figure{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}
+button.shot{all:unset;cursor:zoom-in;display:block;aspect-ratio:16/9;max-width:100%;overflow:hidden;background:var(--notte-2)}
+button.shot:focus-visible{outline:2px solid var(--airglow);outline-offset:3px}
+button.shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+button.shot:hover img{transform:scale(1.025)}
+figcaption{display:flex;gap:12px;align-items:baseline;font-size:14px}
+figcaption b{font-family:var(--mono);font-weight:400;font-size:12px;color:var(--tenue);font-variant-numeric:tabular-nums}
+figcaption small{color:var(--tenue);font-size:13px}
+.lb{position:fixed;inset:0;background:rgba(5,4,14,.96);display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));z-index:20;cursor:zoom-out}
+.lb img{max-height:100%;max-width:100%;object-fit:contain}
+footer{font-family:var(--mono);font-size:12px;color:var(--tenue)}
+@media (prefers-reduced-motion:reduce){button.shot img{transition:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Video Space Economy · Moodboard v1</span>
+    <h1>Dall'orbita alla Terra</h1>
+    <div class="horizon" aria-hidden="true"></div>
+    <p>12 immagini di riferimento per il video. Notte profonda viola-indaco, luci delle città color oro, il bordo dell'atmosfera che sfuma dal blu al verde, satelliti avvolti nella lamina dorata. Fai clic su un'immagine per vederla a tutto schermo.</p>
+    <div class="palette" aria-label="Colori dominanti">
+      <span><i style="background:#0b0a1a"></i>notte</span>
+      <span><i style="background:#3a2a8c"></i>indaco</span>
+      <span><i style="background:#e8b04a"></i>luci città</span>
+      <span><i style="background:#5b8cff"></i>atmosfera</span>
+      <span><i style="background:#b8e986"></i>airglow</span>
+      <span><i style="background:#c9a24a"></i>lamina oro</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>Terra e Italia dall'orbita</h2>
+    <div class="grid">
+      <figure><button class="shot" aria-label="Ingrandisci: Italia di notte"><img src="web/01_italia-orbita.webp" alt="L'Italia di notte vista dall'orbita, con le luci delle città e l'orizzonte luminoso"></button><figcaption><b>01</b>Italia di notte <small>orbita bassa, orizzonte curvo</small></figcaption></figure>
+      <figure><button class="shot" aria-label="Ingrandisci: Sardegna e Tirreno"><img src="web/02_sardegna-mediterraneo.webp" alt="Sardegna e Corsica di notte dall'orbita, nuvole sul Tirreno"></button><figcaption><b>02</b>Sardegna e Tirreno <small>inquadratura obliqua</small></figcaption></figure>
+      <figure><button class="shot" aria-label="Ingrandisci: Orizzonte"><img src="web/03_orizzonte-airglow.webp" alt="Orizzonte terrestre con una linea luminosa dal blu al verde e grande spazio vuoto sopra"></button><figcaption><b>03</b>Orizzonte <small>spazio per titoli e numeri</small></figcaption></figure>
+      <figure><button class="shot" aria-label="Ingrandisci: Globo con orbite"><img src="web/04_globo-orbite.webp" alt="Globo terrestre di notte con orbite sottili e satelliti luminosi"></button><figcaption><b>04</b>Globo con orbite <small>Europa e Mediterraneo</small></figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Satelliti e lanci</h2>
+    <div class="grid">
+      <figure><button class="shot" aria-label="Ingrandisci: Satellite in orbita"><img src="web/05_satellite-oro.webp" alt="Satellite con lamina dorata e pannelli solari sopra la Terra di giorno"></button><figcaption><b>05</b>Satellite in orbita <small>dettaglio lamina oro</small></figcaption></figure>
+      <figure><button class="shot" aria-label="Ingrandisci: Alba orbitale"><img src="web/06_satellite-alba.webp" alt="Sagoma di un satellite in controluce sull'alba orbitale"></button><figcaption><b>06</b>Alba orbitale <small>controluce</small></figcaption></figure>
+      <figure><button class="shot" aria-label="Ingrandisci: Scia del lancio"><img src="web/07_lancio-scia.webp" alt="Lunga esposizione di un lancio: arco dorato sul mare di notte"></button><figcaption><b>07</b>Scia del lancio <small>lunga esposizione dal mare</small></figcaption></figure>
+      <figure><button class="shot" aria-label="Ingrandisci: Razzo sulla rampa"><img src="web/08_razzo-rampa.webp" alt="Razzo sulla rampa di notte tra fari e vapore"></button><figcaption><b>08</b>Razzo sulla rampa <small>fari e vapore</small></figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Persone e infrastrutture</h2>
+    <div class="grid">
+      <figure><button class="shot" aria-label="Ingrandisci: Camera bianca"><img src="web/09_camera-bianca.webp" alt="Tecnici in tuta bianca attorno a un satellite dorato in una camera bianca"></button><figcaption><b>09</b>Camera bianca <small>integrazione del satellite</small></figcaption></figure>
+      <figure><button class="shot" aria-label="Ingrandisci: Centro di controllo"><img src="web/10_centro-controllo.webp" alt="Centro di controllo con operatori di spalle e la Terra sul videowall"></button><figcaption><b>10</b>Centro di controllo <small>videowall con l'Europa</small></figcaption></figure>
+      <figure><button class="shot" aria-label="Ingrandisci: Antenne di terra"><img src="web/11_antenne.webp" alt="Grande radiotelescopio di notte tra colline mediterranee con scie di stelle"></button><figcaption><b>11</b>Antenne di terra <small>colline e scie di stelle</small></figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Luna ed esplorazione</h2>
+    <div class="grid">
+      <figure><button class="shot" aria-label="Ingrandisci: Suolo lunare"><img src="web/12_luna.webp" alt="Suolo lunare grigio con la Terra piccola sopra l'orizzonte"></button><figcaption><b>12</b>Suolo lunare <small>Terra sull'orizzonte</small></figcaption></figure>
+    </div>
+  </section>
+
+  <footer>Immagini generate con l'AI (Nano Banana Pro) · originali 5504 × 3072 px</footer>
+</div>
+
+<div class="lb" id="lb" hidden><img id="lbimg" alt=""></div>
+<script>
+const lb=document.getElementById('lb'),li=document.getElementById('lbimg');
+document.querySelectorAll('button.shot').forEach(b=>b.addEventListener('click',()=>{const i=b.querySelector('img');li.src=i.src;li.alt=i.alt;lb.hidden=false;}));
+lb.addEventListener('click',()=>{lb.hidden=true});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.hidden=true});
+</script>
+
+</body>
+</html>
